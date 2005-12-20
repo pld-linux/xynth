@@ -1,5 +1,5 @@
-#
 Summary:	Xynth Window System
+Summary(pl):	System okienkowy Xynth Window System
 Name:		xynth
 Version:	0.7.91
 Release:	0.1
@@ -7,38 +7,50 @@ License:	GPL
 Group:		Applications
 Source0:	http://dl.sourceforge.net/xynth/%{name}-%{version}.tar.bz2
 # Source0-md5:	6e193a82430528f55c1a9bf178116343
-Requires:	%{name}-libs = %{version}-%{release}
 URL:		http://www.xynth.org/
+Requires:	%{name}-libs = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Xynth Window System
+Xynth Window System.
+
+%description -l pl
+System okienkowy Xynth Window System.
 
 %package libs
 Summary:	Xynth Window System libraries
+Summary(pl):	Biblioteki systemu okienkowego Xynth Window System
 Group:		Libraries
 
 %description libs
-Xynth Window System libraries
+Xynth Window System libraries.
+
+%description libs -l pl
+Biblioteki systemu okienkowego Xynth Window System.
 
 %package devel
 Summary:	Header files for Xynth Window System libraries
+Summary(pl):	Pliki nag³ówkowe bibliotek systemu okienkowego Xynth Window System
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 
 %description devel
-This is the package containing the header files for ... library.
+Header files for Xynth Window System libraries.
 
 %description devel -l pl
-Ten pakiet zawiera pliki nag³ówkowe biblioteki ....
+Pliki nag³ówkowe bibliotek systemu okienkowego Xynth Window System.
 
 %package static
 Summary:	Static Xynth Window System libraries
+Summary(pl):	Statyczne biblioteki systemu okienkowego Xynth Window System
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static Xynth Window System libraries.
+
+%description static -l pl
+Statyczne biblioteki systemu okienkowego Xynth Window System.
 
 %prep
 %setup -q -n %{name}
@@ -53,27 +65,28 @@ Static Xynth Window System libraries.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/%{_prefix}
-install -d $RPM_BUILD_ROOT/%{_sysconfdir}/%{name}
-cp -a dist/{bin,share,lib,include} $RPM_BUILD_ROOT/%{_prefix}
-cp -a dist/etc/%{name}/* $RPM_BUILD_ROOT/%{_sysconfdir}/%{name}
+install -d $RPM_BUILD_ROOT%{_libdir}
+install -d $RPM_BUILD_ROOT%{_sysconfdir}/%{name}
+cp -a dist/{bin,share,include} $RPM_BUILD_ROOT%{_prefix}
+cp -a dist/lib $RPM_BUILD_ROOT%{_libdir}
+cp -a dist/etc/%{name}/* $RPM_BUILD_ROOT%{_sysconfdir}/%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post libs	-p /sbin/ldconfig
+%post	libs -p /sbin/ldconfig
 %postun	libs -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %dir %{_sysconfdir}/%{name}
-%config %{_sysconfdir}/%{name}/*
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/%{name}/*
 %{_datadir}/%{name}
 
 %files libs
-%attr(755,root,root) %{_prefix}/lib/*.so.*
-%attr(755,root,root) %{_prefix}/lib/*.so.*
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/*.so.*
 
 %files devel
 %defattr(644,root,root,755)
@@ -81,5 +94,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files static
 %defattr(644,root,root,755)
-%{_prefix}/lib/libwidget.a
-%{_prefix}/lib/libxynth.a
+%{_libdir}/libwidget.a
+%{_libdir}/libxynth.a
