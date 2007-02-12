@@ -1,5 +1,5 @@
 Summary:	Xynth Window System
-Summary(pl):	System okienkowy Xynth Window System
+Summary(pl.UTF-8):   System okienkowy Xynth Window System
 Name:		xynth
 Version:	0.7.91
 Release:	0.1
@@ -14,42 +14,42 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Xynth Window System.
 
-%description -l pl
+%description -l pl.UTF-8
 System okienkowy Xynth Window System.
 
 %package libs
 Summary:	Xynth Window System libraries
-Summary(pl):	Biblioteki systemu okienkowego Xynth Window System
+Summary(pl.UTF-8):   Biblioteki systemu okienkowego Xynth Window System
 Group:		Libraries
 
 %description libs
 Xynth Window System libraries.
 
-%description libs -l pl
+%description libs -l pl.UTF-8
 Biblioteki systemu okienkowego Xynth Window System.
 
 %package devel
 Summary:	Header files for Xynth Window System libraries
-Summary(pl):	Pliki nag≥Ûwkowe bibliotek systemu okienkowego Xynth Window System
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe bibliotek systemu okienkowego Xynth Window System
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 
 %description devel
 Header files for Xynth Window System libraries.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe bibliotek systemu okienkowego Xynth Window System.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe bibliotek systemu okienkowego Xynth Window System.
 
 %package static
 Summary:	Static Xynth Window System libraries
-Summary(pl):	Statyczne biblioteki systemu okienkowego Xynth Window System
+Summary(pl.UTF-8):   Statyczne biblioteki systemu okienkowego Xynth Window System
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static Xynth Window System libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczne biblioteki systemu okienkowego Xynth Window System.
 
 %prep
