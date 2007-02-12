@@ -1,5 +1,5 @@
 Summary:	Xynth Window System
-Summary(pl.UTF-8):   System okienkowy Xynth Window System
+Summary(pl.UTF-8):	System okienkowy Xynth Window System
 Name:		xynth
 Version:	0.7.91
 Release:	0.1
@@ -19,7 +19,7 @@ System okienkowy Xynth Window System.
 
 %package libs
 Summary:	Xynth Window System libraries
-Summary(pl.UTF-8):   Biblioteki systemu okienkowego Xynth Window System
+Summary(pl.UTF-8):	Biblioteki systemu okienkowego Xynth Window System
 Group:		Libraries
 
 %description libs
@@ -30,7 +30,7 @@ Biblioteki systemu okienkowego Xynth Window System.
 
 %package devel
 Summary:	Header files for Xynth Window System libraries
-Summary(pl.UTF-8):   Pliki nagłówkowe bibliotek systemu okienkowego Xynth Window System
+Summary(pl.UTF-8):	Pliki nagłówkowe bibliotek systemu okienkowego Xynth Window System
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 
@@ -42,7 +42,7 @@ Pliki nagłówkowe bibliotek systemu okienkowego Xynth Window System.
 
 %package static
 Summary:	Static Xynth Window System libraries
-Summary(pl.UTF-8):   Statyczne biblioteki systemu okienkowego Xynth Window System
+Summary(pl.UTF-8):	Statyczne biblioteki systemu okienkowego Xynth Window System
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
